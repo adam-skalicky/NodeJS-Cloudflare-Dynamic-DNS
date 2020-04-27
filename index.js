@@ -1,11 +1,13 @@
 const CronJob = require('cron').CronJob;
 const fetch = require('node-fetch')
 
-const zoneID = "foundOnOverView";
-const dnsName = "name.of.domain.com"
-const cftoken = "See https://support.cloudflare.com/hc/en-us/articles/200167836-Managing-API-Tokens-and-Keys"
-const timeZone = "America/Los_Angeles"
-const cronTime = "* * * * *"
+const config = require('./config.json')
+
+const zoneID = config.zoneID;
+const dnsName = config.dnsName;
+const cftoken = config.cftoken;
+const timeZone = config.timeZone;
+const cronTime = config.cronTime;
 
 
 const cf = require('cloudflare')({
